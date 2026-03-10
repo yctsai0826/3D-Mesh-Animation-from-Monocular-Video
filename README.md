@@ -4,20 +4,13 @@
 ## 🚀 Pipeline Overview
 
 
-1. 
-**Tracking & Initialization:** Extracts long-term 2D point tracks from video and generates a 3D rest skeleton from the input mesh.
+**1. Tracking & Initialization:** Extracts long-term 2D point tracks from video and generates a 3D rest skeleton from the input mesh.
 
+**2. Semantic Correspondence:** Employs DINOv2 zero-shot features and the Hungarian algorithm to map 3D joints to 2D video tracks without manual labels.
 
-2. 
-**Semantic Correspondence:** Employs DINOv2 zero-shot features and the Hungarian algorithm to map 3D joints to 2D video tracks without manual labels.
+**3. 3D Motion Lifting:** A Spatio-Temporal Graph Neural Network (ST-GNN) resolves depth ambiguity. It processes a tensor of shape $F \times K \times 3$ to lift 2D tracks into full 3D kinematics.
 
-
-3. 
-**3D Motion Lifting:** A Spatio-Temporal Graph Neural Network (ST-GNN) resolves depth ambiguity. It processes a tensor of shape $F \times K \times 3$ to lift 2D tracks into full 3D kinematics.
-
-
-4. 
-**Voxel-Based Skinning:** Converts the mesh into a watertight volumetric proxy to compute robust weights, ensuring artifact-free deformations.
+**4. Voxel-Based Skinning:** Converts the mesh into a watertight volumetric proxy to compute robust weights, ensuring artifact-free deformations.
 
 
 
