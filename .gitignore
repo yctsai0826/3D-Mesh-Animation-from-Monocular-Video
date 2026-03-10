@@ -1,0 +1,7 @@
+*.pth
+*.ckpt
+*.bin
+*.npy
+checkpoints/
+models/
+blender_bin/
